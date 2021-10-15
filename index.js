@@ -64,7 +64,7 @@ const zooAnimals = [
     zooAnimals.forEach((zooAnimals)=> displayNames.push(`name: ${zooAnimals.animal_name}, scientific: ${zooAnimals.scientific_name}`))
     return displayNames;
   }
-  console.log(animalNames(zooAnimals));
+  //console.log(animalNames(zooAnimals));
 
   /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
   The zoo needs a list of all their animal's names converted to lower case. 
@@ -76,7 +76,7 @@ const zooAnimals = [
     const animalNamesLower = zooAnimals.map((zooAnimals) => zooAnimals.animal_name.toLowerCase());
     return animalNamesLower;
   }
-  console.log(lowerCaseNames(zooAnimals))
+  //console.log(lowerCaseNames(zooAnimals))
   
   /* 🦁🦁🦁 Request 3: .filter() 🦁🦁🦁
   The zoo is concerned about animals with a lower population count. 
@@ -87,7 +87,7 @@ const zooAnimals = [
     const lowPop = zooAnimals.filter((zooAnimals) => zooAnimals.population < 5);
     return lowPop;
   }
-  console.log(lowPopulationAnimals(zooAnimals));
+  //console.log(lowPopulationAnimals(zooAnimals));
 
   /* 🦁🦁🦁 Request 4: .reduce() 🦁🦁🦁
   The zoo needs to know their total animal population across the United States. 
@@ -95,10 +95,13 @@ const zooAnimals = [
   Remember the reduce method takes two arguments: a callback (which itself takes two args - the accumulator and the item), and an initial value for the count.
   */
 
-  function USApop(/*Your Code Here*/){
-    /*Your Code Here*/
+  function USApop(zooAnimals){
+    const totalPop = zooAnimals.reduce((accumulator, zooAnimals) => {
+      return accumulator + zooAnimals.population
+    }, 0);
+    return totalPop;
   }
-  
+  //console.log(USApop(zooAnimals));
   
   // 🦁🦁🦁 Callbacks 🦁🦁🦁  
   /* 🦁🦁🦁 Step 1: Create a higher-order function 🦁🦁🦁
